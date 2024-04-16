@@ -14,6 +14,10 @@ import java.util.Set;
 @Configuration
 @EnableCaching
 public class CacheConfig {
+
+    // Another way of configuration is
+    // spring.cache.cache-names=employees,someothercache
+    // spring.cache.caffeine.spec=initialCapacity=50,maximumSize=500,expireAfterAccess=60s
     @Bean
     public CacheManager cacheManager() {
         CaffeineCacheManager cacheManager = new CaffeineCacheManager();
@@ -22,6 +26,9 @@ public class CacheConfig {
         return cacheManager;
     }
 
+    // Expire After Access: Expires the entry after the specified duration is passed since the last read or write occurs.
+    // Expire After Write: Expires the entry after the specified duration is passed since the last write occurs.
+    // Expire After: Custom expiry for each entry based on custom expiry implementation.
     private Caffeine<Object, Object> caffeineCacheBuilder() {
         Duration duration = Duration.ofMinutes(1);
         return Caffeine.newBuilder()
