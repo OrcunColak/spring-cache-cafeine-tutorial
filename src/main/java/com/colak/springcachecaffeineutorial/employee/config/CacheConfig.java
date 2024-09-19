@@ -16,8 +16,9 @@ import java.util.Set;
 public class CacheConfig {
 
     // Another way of configuration is
+    // spring.cache.type=caffeine
     // spring.cache.cache-names=employees,someothercache
-    // spring.cache.caffeine.spec=initialCapacity=50,maximumSize=500,expireAfterAccess=60s
+    // spring.cache.caffeine.spec=initialCapacity=50,maximumSize=500,expireAfterAccess=60s,expireAfterWrite=10m
     @Bean
     public CacheManager cacheManager() {
         CaffeineCacheManager cacheManager = new CaffeineCacheManager();
