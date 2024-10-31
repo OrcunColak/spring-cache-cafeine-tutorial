@@ -1,4 +1,4 @@
-package com.colak.springcachecaffeineutorial.employee.config;
+package com.colak.springtutorial.employee.config;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
 import org.springframework.cache.CacheManager;
@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.Duration;
-import java.util.HashSet;
-import java.util.Set;
 
 @Configuration
 @EnableCaching
@@ -22,8 +20,13 @@ public class CacheConfig {
     @Bean
     public CacheManager cacheManager() {
         CaffeineCacheManager cacheManager = new CaffeineCacheManager();
-        cacheManager.setCaffeine(caffeineCacheBuilder());
-        cacheManager.setCacheNames(someCacheNames()); // Specify cache names if needed
+        Caffeine<Object, Object> caffeine = caffeineCacheBuilder();
+        cacheManager.setCaffeine(caffeine);
+
+        // Set<String> cacheNames = new HashSet<>();
+        // cacheNames.add("employees");
+        // cacheManager.setCacheNames(cacheNames); // Specify cache names if needed
+
         return cacheManager;
     }
 
@@ -53,9 +56,4 @@ public class CacheConfig {
                 .recordStats(); // Enable statistics (optional)
     }
 
-    private Set<String> someCacheNames() {
-        Set<String> cacheNames = new HashSet<>();
-        cacheNames.add("employees");
-        return cacheNames;
-    }
 }

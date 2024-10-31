@@ -1,10 +1,10 @@
-package com.colak.springcachecaffeineutorial.employee.controller;
+package com.colak.springtutorial.employee.controller;
 
 
-import com.colak.springcachecaffeineutorial.employee.dto.EmployeeDTO;
-import com.colak.springcachecaffeineutorial.employee.jpa.Employee;
-import com.colak.springcachecaffeineutorial.employee.mapstruct.EmployeeMapper;
-import com.colak.springcachecaffeineutorial.employee.service.EmployeeService;
+import com.colak.springtutorial.employee.dto.EmployeeDTO;
+import com.colak.springtutorial.employee.jpa.Employee;
+import com.colak.springtutorial.employee.mapstruct.EmployeeMapper;
+import com.colak.springtutorial.employee.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheConfig;

@@ -1,7 +1,7 @@
-package com.colak.springcachecaffeineutorial.employee.config;
+package com.colak.springtutorial.employee.config;
 
-import com.colak.springcachecaffeineutorial.employee.jpa.Employee;
-import com.colak.springcachecaffeineutorial.employee.repository.EmployeeRepository;
+import com.colak.springtutorial.employee.jpa.Employee;
+import com.colak.springtutorial.employee.repository.EmployeeRepository;
 import com.github.benmanes.caffeine.cache.CacheLoader;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;

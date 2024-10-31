@@ -1,8 +1,8 @@
-package com.colak.springcachecaffeineutorial.employee.mapstruct;
+package com.colak.springtutorial.employee.mapstruct;
 
 
-import com.colak.springcachecaffeineutorial.employee.dto.EmployeeDTO;
-import com.colak.springcachecaffeineutorial.employee.jpa.Employee;
+import com.colak.springtutorial.employee.dto.EmployeeDTO;
+import com.colak.springtutorial.employee.jpa.Employee;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
