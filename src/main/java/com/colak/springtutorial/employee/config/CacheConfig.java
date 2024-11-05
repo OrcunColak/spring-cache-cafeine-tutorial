@@ -21,7 +21,11 @@ public class CacheConfig {
     public CacheManager cacheManager() {
         CaffeineCacheManager cacheManager = new CaffeineCacheManager();
         Caffeine<Object, Object> caffeine = caffeineCacheBuilder();
-        cacheManager.setCaffeine(caffeine);
+
+        cacheManager.setAsyncCacheMode(true);
+
+        // See https://medium.com/@rsoni14378/7-techniques-to-optimize-caching-in-spring-boot-for-peak-performance-80a29166cdec
+        // cacheManager.setCaffeine(caffeine);
 
         // Set<String> cacheNames = new HashSet<>();
         // cacheNames.add("employees");
