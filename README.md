@@ -13,3 +13,11 @@ https://medium.com/@ak123aryan/supercharge-your-spring-boot-application-with-caf
 
 Go to  
 http://localhost:8080/swagger-ui/index.html
+
+# Configuration
+
+````properties
+spring.cache.type=caffeine
+spring.cache.cache-names=buckets
+spring.cache.caffeine.spec=initialCapacity=50,maximumSize=500,expireAfterAccess=60s,expireAfterWrite=10m
+```
